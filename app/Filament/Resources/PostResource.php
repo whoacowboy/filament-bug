@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Filament\Resources\MyNamespace\Models;
+namespace App\Filament\Resources;
 
-use App\Filament\Resources\MyNamespace\Models\PostResource\Pages;
-use App\Filament\Resources\MyNamespace\Models\PostResource\RelationManagers;
-use App\Models\MyNamespace\Models\Post;
+use App\Filament\Resources\PostResource\Pages;
+//use App\Filament\Resources\PostResource\RelationManagers;
+use MyNamespace\Models\Post;
 use Filament\Forms;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
@@ -43,14 +43,14 @@ class PostResource extends Resource
                 Tables\Actions\DeleteBulkAction::make(),
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
             //
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [
@@ -58,5 +58,5 @@ class PostResource extends Resource
             'create' => Pages\CreatePost::route('/create'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
-    }    
+    }
 }
